@@ -22,6 +22,7 @@ class MyServer(BaseHTTPRequestHandler):
         page_content = self.__get_html_content()
         self.send_response(200)  # Отправка кода ответа
         self.send_header("Content-type","text/html")
+        self.end_headers()
         self.wfile.write(page_content.encode('utf-8'))  # Тело ответа
 
 if __name__ == "__main__":
